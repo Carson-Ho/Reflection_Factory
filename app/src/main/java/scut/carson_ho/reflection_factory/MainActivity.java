@@ -14,7 +14,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // 优化方案：采用属性配置文件
-
         // 1. 读取属性配置文件
         Properties pro = new Properties() ;
 
@@ -28,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         // 2. 获取属性配置文件中的产品类名
         String Classname = pro.getProperty("ProductA");
+        System.out.println(Classname);
 
         // 3. 动态生成产品类实例
         Product concreteProduct = Factory.getInstance(Classname);
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        // 方案1
+        // 基本方案
 
 //        // 1. 通过调用工厂类的静态方法（反射原理），从而动态创建产品类实例
 //        // 需传入完整的类名 & 包名
@@ -45,9 +45,6 @@ public class MainActivity extends AppCompatActivity {
 //
 //        // 2. 调用该产品类对象的方法，从而生产产品
 //        concreteProduct.show();
-
-
-
 
 
     }
